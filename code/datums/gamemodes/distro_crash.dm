@@ -1,9 +1,12 @@
+#define LOWER_THRESHOLD_POP_FACTOR 20
+#define LIFE_FACTOR 6
+
 /datum/game_mode/infestation/distro_crush
 	name = "Distro Crash"
 	config_tag = "Distro Crash"
-	silo_scaling = 2
+	silo_scaling = 0 //HA HA
 	required_players = 2
-	round_type_flags = MODE_INFESTATION|MODE_LATE_OPENING_SHUTTER_TIMER|MODE_PSY_POINTS|MODE_DEAD_GRAB_FORBIDDEN|MODE_SILO_RESPAWN|MODE_SILOS_SPAWN_MINIONS|MODE_ALLOW_XENO_QUICKBUILD|MODE_HAS_EXCAVATION
+	round_type_flags = MODE_INFESTATION|MODE_LATE_OPENING_SHUTTER_TIMER|MODE_PSY_POINTS|MODE_DEAD_GRAB_FORBIDDEN|MODE_SILOS_SPAWN_MINIONS|MODE_ALLOW_XENO_QUICKBUILD|MODE_HAS_EXCAVATION|MODE_HAS_MINERS
 	xeno_abilities_flags = ABILITY_DISTRESS
 	valid_job_types = list(
 		/datum/job/terragov/squad/standard = -1,
@@ -18,6 +21,8 @@
 		/datum/job/terragov/command/fieldcommander = 1,
 		/datum/job/xenomorph = FREE_XENO_AT_START
 	)
+	respawn_time = 0
+	xenorespawn_time = 0
 
 	// Round end conditions
 	var/shuttle_landed = FALSE
@@ -29,6 +34,14 @@
 	var/LZ_dock = FALSE
 
 	var/siloless_hive_timer
+
+	var/xeno_left = 40
+	var/marine_left = 120
+
+	var/last_max_pop = LOWER_THRESHOLD_POP_FACTOR
+
+	var/check_interval = 5 SECONDS
+	var/last_check
 
 /datum/game_mode/infestation/distro_crush/pre_setup()
 	. = ..()
@@ -153,3 +166,80 @@
 /datum/game_mode/infestation/distro_crush/can_summon_dropship(mob/user)
 	to_chat(src, span_warning("This power doesn't work in this gamemode."))
 	return FALSE
+
+/datum/game_mode/infestation/distro_crush/process()
+	. = ..()
+	if(world.time > last_check + check_interval)
+		last_check = world.time // It should stand first, so the check updates not after the balance_scales() gets completed
+		recalculate_job_left()
+		add_xeno()
+
+/// Adds more xeno job slots if needed.
+/datum/game_mode/infestation/distro_crush/proc/recalculate_job_left()
+	if((TGS_CLIENT_COUNT - last_max_pop) < 4)
+		return
+	last_max_pop += 4
+	//1 to 3 ratio
+	xeno_left = 1 * LIFE_FACTOR
+	marine_left = 3 * LIFE_FACTOR
+
+/// Adds more xeno job slots if needed.
+/datum/game_mode/infestation/distro_crush/proc/add_xeno()
+	var/datum/hive_status/normal/xeno_hive = GLOB.hive_datums[XENO_HIVE_NORMAL]
+	var/datum/job/xeno_job = SSjob.GetJobType(/datum/job/xenomorph)
+	// Spawn more xenos to help maintain the ratio.
+	var/xenomorphs_below_ratio = trunc(get_jobpoint_difference() / xeno_job.job_points_needed)
+	if(xenomorphs_below_ratio >= 1 && xeno_left >= 1)
+		xeno_job.add_job_positions(1)
+		xeno_left -= 1
+		xeno_hive.update_tier_limits()
+
+/// Gets the difference of job points between humans and xenos. Negative means too many xenos. Positive means too many humans.
+/datum/game_mode/infestation/distro_crush/proc/get_jobpoint_difference()
+	var/datum/hive_status/normal/xeno_hive = GLOB.hive_datums[XENO_HIVE_NORMAL]
+	var/datum/job/xeno_job = SSjob.GetJobType(/datum/job/xenomorph)
+	return get_total_joblarvaworth(count_flags = COUNT_IGNORE_HUMAN_SSD) - (xeno_hive.total_xenos_for_evolving() * xeno_job.job_points_needed)
+
+/datum/game_mode/infestation/distro_crush/get_adjusted_jobworth_list(list/jobworth_list)
+	var/list/adjusted_jobworth_list = deep_copy_list(jobworth_list)
+	var/jobpoint_difference = get_jobpoint_difference()
+	for(var/index in jobworth_list)
+		var/datum/job/scaled_job = SSjob.GetJobType(index)
+		if(!(index in SSticker.mode.valid_job_types))
+			continue
+		if(!isxenosjob(scaled_job))
+			continue
+		var/amount = jobworth_list[index]
+		adjusted_jobworth_list[index] = clamp(jobpoint_difference + amount, 0, amount)
+	return adjusted_jobworth_list
+
+///Add gamemode related items to statpanel
+/datum/game_mode/infestation/distro_crush/get_status_tab_items(datum/dcs, mob/source, list/items)
+	. = ..()
+	if(isobserver(source) || isnewplayer(source))
+		items +="Xenos left: [xeno_left]"
+		items +="Marines left: [marine_left]"
+	if(isxeno(source.?job))
+		items +="Xenos left: [xeno_left]"
+	if(isterragovjob(source.?job))
+		items +="Marines left: [marine_left]"
+
+/datum/game_mode/infestation/distro_crush/CanLateSpawn(mob/new_player/NP, datum/job/job)
+	//managed by larva spawn
+	/*
+	if(isxenosjob(job) && xeno_left <= 0)
+		to_chat(usr, span_warning("No xenos left. you can observ round without respawn penalty"))
+		return FALSE
+	*/
+	if(isterragovjob(job) && marine_left <= 0)
+		to_chat(usr, span_warning("No marines left. you can observ round without respawn penalty"))
+		return FALSE
+	return ..()
+
+/datum/game_mode/infestation/distro_crush/LateSpawn(mob/new_player/player)
+	if(isterragovjob(player.assigned_role))
+		marine_left -= 1
+	return ..()
+
+#undef LOWER_THRESHOLD_POP_FACTOR
+#undef LIFE_FACTOR
