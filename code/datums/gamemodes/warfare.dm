@@ -37,8 +37,8 @@
 
 	var/siloless_hive_timer
 
-	var/xeno_left = 40
-	var/marine_left = 120
+	var/xeno_left = 30
+	var/marine_left = 90
 
 	var/last_max_pop = LOWER_THRESHOLD_POP_FACTOR
 
