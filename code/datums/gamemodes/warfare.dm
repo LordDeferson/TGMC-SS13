@@ -1,5 +1,5 @@
 #define LOWER_THRESHOLD_POP_FACTOR 20
-#define LIFE_FACTOR 6
+#define LIFE_FACTOR 3
 
 //TODO PSY DRAINS AND COOCONS
 
@@ -37,8 +37,8 @@
 
 	var/siloless_hive_timer
 
-	var/xeno_left = 30
-	var/marine_left = 90
+	var/xeno_left = 20
+	var/marine_left = 60
 
 	var/last_max_pop = LOWER_THRESHOLD_POP_FACTOR
 
