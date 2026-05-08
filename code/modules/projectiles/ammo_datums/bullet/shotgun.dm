@@ -57,7 +57,7 @@
 	accuracy_var_low = 8
 	accuracy_var_high = 8
 	max_range = 15
-	damage = 45
+	damage = 50
 	damage_falloff = 0.5
 	penetration = 15
 	sundering = 7
@@ -73,8 +73,8 @@
 
 /datum/ammo/bullet/shotgun/flechette/flechette_spread
 	name = "additional flechette"
-	damage = 35
-	additional_xeno_penetration = 30
+	damage = 40
+	sundering = 5
 
 /datum/ammo/bullet/shotgun/flechette/flechette_spread/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
 	return
