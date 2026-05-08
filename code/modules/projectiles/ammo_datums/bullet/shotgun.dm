@@ -61,15 +61,6 @@
 	damage_falloff = 0.5
 	penetration = 15
 	sundering = 7
-	///shatter effection duration when hitting mobs
-	var/shatter_duration = 8 SECONDS
-
-/datum/ammo/bullet/shotgun/flechette/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
-	if(!isliving(target_mob))
-		return
-
-	var/mob/living/living_victim = target_mob
-	living_victim.apply_status_effect(STATUS_EFFECT_SHATTER, shatter_duration)
 
 /datum/ammo/bullet/shotgun/flechette/flechette_spread
 	name = "additional flechette"
