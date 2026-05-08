@@ -10,7 +10,7 @@
 	ammo_behavior_flags = AMMO_BALLISTIC
 	shell_speed = 3
 	max_range = 15
-	damage = 85
+	damage = 100
 	penetration = 20
 	additional_xeno_penetration = 20
 
@@ -38,7 +38,7 @@
 	damage_type = BRUTE
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_INCENDIARY
 	max_range = 10
-	damage = 100
+	damage = 70
 	penetration = 15
 	bullet_color = COLOR_TAN_ORANGE
 
@@ -60,7 +60,7 @@
 	damage = 45
 	damage_falloff = 0.5
 	penetration = 15
-	additional_xeno_penetration = 20
+	sundering = 7
 	///shatter effection duration when hitting mobs
 	var/shatter_duration = 8 SECONDS
 
