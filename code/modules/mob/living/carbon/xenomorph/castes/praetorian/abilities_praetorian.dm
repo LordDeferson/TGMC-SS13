@@ -517,7 +517,7 @@ GLOBAL_LIST_INIT(acid_spray_hit, typecacheof(list(/obj/structure/barricade, /obj
 /datum/action/ability/activable/xeno/impale/proc/determine_buff_mult(mob/living/carbon/human/living_target)
 	var/adjusted_mult = 1.20
 	//tier 1 debuffs
-	if(living_target.has_status_effect(STATUS_EFFECT_STAGGER))
+	if(living_target.IsStaggered())
 		adjusted_mult += 0.25
 	if(living_target.IsSlowed())
 		adjusted_mult += 0.25
