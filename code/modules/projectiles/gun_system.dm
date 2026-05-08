@@ -1772,7 +1772,7 @@
 		projectile_to_fire.point_blank_range = 0
 	if(isliving(firer))
 		var/mob/living/living_firer = firer
-		if(living_firer.has_status_effect(STATUS_EFFECT_STAGGER))
+		if(living_firer.IsStaggered())
 			projectile_to_fire.damage *= STAGGER_DAMAGE_MULTIPLIER
 
 ///Sets the projectile accuracy and scatter
