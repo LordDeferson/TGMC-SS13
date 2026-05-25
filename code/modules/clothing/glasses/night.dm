@@ -159,7 +159,7 @@
 	///Looping sound to play
 	var/datum/looping_sound/active_sound = /datum/looping_sound/scan_pulse
 	///How loud the looping sound should be
-	var/looping_sound_volume = 15
+	var/looping_sound_volume = 5
 	var/last_active_time = 0
 
 /obj/item/clothing/glasses/night_vision/Initialize(mapload)
@@ -288,7 +288,7 @@
 	tint = COLOR_BLUE
 	vision_flags = NONE
 	active_energy_cost = 2	//4 minutes of use
-	looping_sound_volume = 25
+	looping_sound_volume = 15
 
 /obj/item/clothing/glasses/night_vision/mounted/Initialize(mapload)
 	. = ..()
