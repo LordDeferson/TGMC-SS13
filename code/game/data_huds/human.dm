@@ -98,7 +98,7 @@
 			if(has_status_effect(STATUS_EFFECT_STUN))
 				status_hud.icon_state = "stun"
 				return TRUE
-			if(has_status_effect(STATUS_EFFECT_STAGGER))
+			if(IsStaggered())
 				return TRUE
 			if(slowdown)
 				status_hud.icon_state = "slowdown"
@@ -165,7 +165,7 @@
 			if(has_status_effect(STATUS_EFFECT_STUN))
 				status_hud.icon_state = "stun"
 				return TRUE
-			if(has_status_effect(STATUS_EFFECT_STAGGER))
+			if(IsStaggered())
 				return TRUE
 			if(slowdown)
 				status_hud.icon_state = "slowdown"
@@ -271,7 +271,7 @@
 			if(has_status_effect(STATUS_EFFECT_STUN))
 				simple_status_hud.icon_state = "stun"
 				return TRUE
-			if(has_status_effect(STATUS_EFFECT_STAGGER))
+			if(IsStaggered())
 				simple_status_hud.icon_state = "stagger"
 				return TRUE
 			if(slowdown)
