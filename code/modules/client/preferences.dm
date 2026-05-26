@@ -39,7 +39,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	/// Volume setting that sets the volume of ambience
 	var/volume_ambience = 100
 	/// Volume setting that sets the volume of lobby music
-	var/volume_lobby = 100
+	var/volume_lobby = 10
 	/// Volume setting that sets the volume of musical instruments
 	var/volume_instruments = 100
 	/// Volume setting that sets the volume of weather

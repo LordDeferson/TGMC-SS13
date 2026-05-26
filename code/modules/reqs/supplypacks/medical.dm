@@ -165,6 +165,14 @@
 	containertype = /obj/structure/closet/crate/secure/surgery
 	access = ACCESS_MARINE_MEDBAY
 
+/datum/supply_packs/medical/defibrillator_compact
+	name = "Compact Defibrillator"
+	notes = "contains compact defibrillator"
+	contains = list(/obj/item/defibrillator/compact)
+	cost = 120
+	containertype = /obj/structure/closet/crate/secure/surgery
+	access = ACCESS_MARINE_MEDBAY
+
 /datum/supply_packs/medical/healthanalyzer_gloves
 	name = "Health scanner gloves"
 	notes = "contains health scanner gloves."
