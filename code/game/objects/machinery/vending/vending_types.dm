@@ -213,8 +213,8 @@
 		"Misc" = list(
 			/obj/item/tool/research/xeno_analyzer = -1,
 			/obj/item/tool/research/excavation_tool = -1,
-			/obj/item/clothing/glasses/hud/health = 8,
-			/obj/item/roller = 6,
+			/obj/item/clothing/glasses/hud/health = 15,
+			/obj/item/roller = 15,
 		),
 	)
 	idle_power_usage = 211

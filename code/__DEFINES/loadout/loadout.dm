@@ -120,6 +120,7 @@ GLOBAL_LIST_INIT(loadout_linked_vendor, list(
 		/obj/machinery/vending/MarineMed,
 		/obj/machinery/vending/cigarette,
 		/obj/machinery/vending/tool,
+		/obj/machinery/vending/medical/shipside,
 	),
 	VENDOR_FACTION_VALHALLA = list(
 		/obj/machinery/vending/weapon/valhalla,
@@ -144,6 +145,7 @@ GLOBAL_LIST_INIT(loadout_linked_vendor, list(
 		/obj/machinery/vending/MarineMed,
 		/obj/machinery/vending/cigarette,
 		/obj/machinery/vending/tool,
+		/obj/machinery/vending/medical/shipside,
 	)
 ))
 
