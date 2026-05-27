@@ -3001,6 +3001,10 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northwestmonorail/hallway)
+"pN" = (
+/obj/effect/landmark/xeno_spawner_spawn,
+/turf/open/floor/plating/ground/ice,
+/area/icy_caves/caves/west)
 "pO" = (
 /obj/item/ammo_casing,
 /turf/open/floor/tile/dark,
@@ -12296,7 +12300,7 @@ ZP
 ZP
 ZI
 ZU
-ZU
+pN
 ZU
 ZU
 ZU

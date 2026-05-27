@@ -24954,6 +24954,10 @@
 	dir = 8
 	},
 /area/slumbridge/inside/engi/central)
+"sjA" = (
+/obj/effect/landmark/xeno_spawner_spawn,
+/turf/open/lavaland/basalt,
+/area/slumbridge/outside/northwest)
 "sjE" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/tile/blue/whitebluefull,
@@ -34192,7 +34196,7 @@ leg
 naD
 leg
 leg
-leg
+sjA
 leg
 mca
 jRq

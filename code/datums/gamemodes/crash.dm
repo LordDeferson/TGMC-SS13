@@ -2,7 +2,7 @@
 	name = "Crash"
 	config_tag = "Crash"
 	required_players = 2
-	round_type_flags = MODE_INFESTATION|MODE_XENO_SPAWN_PROTECT|MODE_DEAD_GRAB_FORBIDDEN|MODE_DISALLOW_RAILGUN|MODE_PSY_POINTS|MODE_PSY_POINTS_ADVANCED|MODE_SILOS_SPAWN_MINIONS|MODE_ALLOW_XENO_QUICKBUILD|MODE_HAS_MINERS
+	round_type_flags = MODE_INFESTATION|MODE_XENO_SPAWN_PROTECT|MODE_DEAD_GRAB_FORBIDDEN|MODE_DISALLOW_RAILGUN|MODE_PSY_POINTS|MODE_PSY_POINTS_ADVANCED|MODE_ALLOW_XENO_QUICKBUILD|MODE_HAS_MINERS
 	xeno_abilities_flags = ABILITY_CRASH
 	valid_job_types = list(
 		/datum/job/terragov/squad/standard = -1,
@@ -107,7 +107,10 @@
 		return
 
 	for(var/i in GLOB.xeno_resin_silo_turfs)
-		new /obj/structure/xeno/silo/crash(i)
+		new /obj/structure/xeno/silo(i)
+
+	for(var/i in GLOB.xeno_spawner_turfs)
+		new /obj/structure/xeno/spawner(i, XENO_HIVE_NORMAL)
 
 	for(var/obj/effect/landmark/corpsespawner/corpse AS in GLOB.corpse_landmarks_list)
 		corpse.create_mob()

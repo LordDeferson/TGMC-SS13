@@ -1099,6 +1099,10 @@
 	},
 /turf/open/floor/mainship,
 /area/magmoor/landing/two)
+"aMI" = (
+/obj/effect/landmark/xeno_spawner_spawn,
+/turf/open/floor/plating/ground/mars/random/cave,
+/area/magmoor/cave/southeast)
 "aNa" = (
 /turf/open/floor/plating/ground/concrete/lines{
 	dir = 1
@@ -75371,7 +75375,7 @@ iPB
 xPQ
 oGr
 oGr
-oGr
+aMI
 oGr
 oGr
 tVo

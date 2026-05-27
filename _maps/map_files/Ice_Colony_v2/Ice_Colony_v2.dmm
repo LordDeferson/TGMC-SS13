@@ -21263,6 +21263,10 @@
 	dir = 8
 	},
 /area/ice_colony/surface/hangar/beta)
+"gTz" = (
+/obj/effect/landmark/xeno_spawner_spawn,
+/turf/open/floor/plating/ground/ice,
+/area/ice_colony/exterior/underground/caves/open/garbledradio)
 "gVR" = (
 /obj/structure/cable,
 /obj/effect/ai_node,
@@ -36282,7 +36286,7 @@ trS
 qbo
 qbo
 qbo
-qbo
+gTz
 omc
 qbo
 xJX

@@ -20687,6 +20687,10 @@
 	dir = 8
 	},
 /area/lv624/lazarus/internal_affairs)
+"viX" = (
+/obj/effect/landmark/xeno_spawner_spawn,
+/turf/open/floor/plating/ground/dirt,
+/area/lv624/ground/caves/east1/garbledradio)
 "vji" = (
 /obj/structure/window_frame/colony/reinforced,
 /turf/open/floor/plating,
@@ -61795,7 +61799,7 @@ aah
 aZd
 mRR
 snv
-snv
+viX
 snv
 snv
 snv

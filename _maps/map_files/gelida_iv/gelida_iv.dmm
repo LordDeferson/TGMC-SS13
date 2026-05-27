@@ -947,6 +947,10 @@
 /obj/structure/cargo_container/gorg,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/colony_streets/east_central_street)
+"aHj" = (
+/obj/effect/landmark/xeno_spawner_spawn,
+/turf/open/floor/plating/ground/ice,
+/area/gelida/caves/central_caves/garbledradio)
 "aHo" = (
 /obj/structure/table/mainship,
 /obj/item/reagent_containers/food/drinks/bottle/davenport{
@@ -48253,7 +48257,7 @@ eQn
 cYz
 ubb
 cYz
-cYz
+aHj
 dIF
 cYz
 hDd

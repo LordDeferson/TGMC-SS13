@@ -5280,6 +5280,10 @@
 /obj/effect/turf_decal/warning_stripes/thick,
 /turf/open/floor,
 /area/lv624/lazarus/spaceport)
+"Aw" = (
+/obj/effect/landmark/xeno_spawner_spawn,
+/turf/open/floor/plating/ground/dirt,
+/area/lv624/ground/caves/east1)
 "Ay" = (
 /obj/machinery/telecomms/relay/preset/telecomms/ground,
 /turf/closed/mineral/smooth/indestructible,
@@ -20632,7 +20636,7 @@ Uq
 Uq
 zA
 Uq
-Uq
+Aw
 DU
 Ew
 FC

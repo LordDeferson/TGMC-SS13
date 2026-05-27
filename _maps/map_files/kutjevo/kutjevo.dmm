@@ -1739,6 +1739,10 @@
 	dir = 10
 	},
 /area/kutjevo/interior/colony_South/power2)
+"cby" = (
+/obj/effect/landmark/xeno_spawner_spawn,
+/turf/open/floor/plating/ground/mars/random/sand,
+/area/kutjevo/exterior/colony_S_East)
 "cbz" = (
 /turf/open/floor/plating/kutjevo,
 /area/kutjevo/exterior/colony_north)
@@ -60483,7 +60487,7 @@ vIi
 ygm
 ygm
 mnh
-ygm
+cby
 wYE
 ygm
 vIi

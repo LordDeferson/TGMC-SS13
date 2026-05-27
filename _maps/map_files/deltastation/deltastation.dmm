@@ -39504,6 +39504,10 @@
 	},
 /turf/open/floor/wood,
 /area/deltastation/service/theater/abandoned)
+"ifq" = (
+/obj/effect/landmark/xeno_spawner_spawn,
+/turf/open/floor/plating,
+/area/deltastation/construction/mining/aux_base)
 "ifs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/transparent/neutral/fourcorners,
@@ -161282,7 +161286,7 @@ qqi
 jPz
 qqi
 qqi
-qqi
+ifq
 jdf
 onS
 xYP

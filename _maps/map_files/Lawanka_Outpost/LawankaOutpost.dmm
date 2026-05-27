@@ -25673,6 +25673,10 @@
 	dir = 10
 	},
 /area/lawankaoutpost/colony/engineering)
+"vzy" = (
+/obj/effect/landmark/xeno_spawner_spawn,
+/turf/open/floor/plating/ground/dirt,
+/area/lawankaoutpost/caves/east)
 "vBj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
@@ -77589,7 +77593,7 @@ sIW
 bVa
 bVa
 bVa
-bVa
+vzy
 bVa
 bVa
 bVa

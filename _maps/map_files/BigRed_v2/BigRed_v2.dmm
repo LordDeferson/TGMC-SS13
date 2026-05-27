@@ -11862,6 +11862,10 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/caves/northeast)
+"lBt" = (
+/obj/effect/landmark/xeno_spawner_spawn,
+/turf/open/floor/plating/ground/mars/random/cave,
+/area/bigredv2/caves/east)
 "lBT" = (
 /obj/structure/barricade/wood,
 /obj/effect/landmark/weed_node,
@@ -64941,7 +64945,7 @@ tzo
 kJa
 dVK
 tzo
-tzo
+lBt
 dVK
 gCQ
 gCQ

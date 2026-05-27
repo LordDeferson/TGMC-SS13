@@ -6341,6 +6341,10 @@
 	dir = 8
 	},
 /area/outpost/cargo/engineering)
+"Bu" = (
+/obj/effect/landmark/xeno_spawner_spawn,
+/turf/open/floor/plating/ground/mars/random/cave,
+/area/outpost/caves/south)
 "Bv" = (
 /turf/open/floor/plating/ground/mars/cavetodirt{
 	dir = 6
@@ -18556,7 +18560,7 @@ hK
 hK
 hK
 hK
-hK
+Bu
 IH
 hK
 yW
