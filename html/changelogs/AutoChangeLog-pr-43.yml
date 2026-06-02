@@ -1,4 +1,0 @@
-author: "?"
-delete-after: True
-changes:
-  - bugfix: "Исправил баг (см. ПР https://github.com/Falls-dev/TGMC-SS13/pull/43)"
