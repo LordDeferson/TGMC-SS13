@@ -119,3 +119,6 @@
 /obj/structure/xeno/silo/proc/on_spawn(list/newly_spawned_things)
 	for(var/mob/living/carbon/xenomorph/spawned_minion AS in newly_spawned_things)
 		spawned_minion.transfer_to_hive(hivenumber)
+
+/obj/structure/xeno/silo/crash
+	resistance_flags = UNACIDABLE | DROPSHIP_IMMUNE | PLASMACUTTER_IMMUNE | INDESTRUCTIBLE
