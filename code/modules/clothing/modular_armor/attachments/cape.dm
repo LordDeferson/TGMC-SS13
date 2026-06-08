@@ -208,7 +208,7 @@
 			),
 		),
 		"star" = list(
-			HOOD = TRUE,
+			HOOD = FALSE,
 			HIGHLIGHT_VARIANTS = list(
 				"star",
 				"none",
