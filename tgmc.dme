@@ -741,6 +741,7 @@
 #include "code\datums\skins\gorger.dm"
 #include "code\datums\skins\hivelord.dm"
 #include "code\datums\skins\king.dm"
+#include "code\datums\skins\larva.dm"
 #include "code\datums\skins\panther.dm"
 #include "code\datums\skins\praetorian.dm"
 #include "code\datums\skins\predalien.dm"
