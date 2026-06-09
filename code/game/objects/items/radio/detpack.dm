@@ -358,3 +358,78 @@
 /obj/item/explosive/plastique/detpack/attack_self(mob/user)
 	interact(user)
 	return
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+
+/obj/item/explosive/plastique/detpack/trench
+	name = "Better trench charge"
+	desc = "Used for fast trench excavation. Since you have no idea what a trench is, you can probably use this thing to dig a hole in a rock."
+	/// Cardinal direction from the planter toward the target wall at plant time.
+	var/plant_direction
+
+/obj/item/explosive/plastique/detpack/trench/nullvars()
+	plant_direction = null
+	return ..()
+
+/obj/item/explosive/plastique/detpack/trench/detonate()
+	detonation_pending = null
+	if(plant_target == null || !plant_target.loc) //need a target to be attached to
+		if(timer < DETPACK_TIMER_MIN) //reset to minimum 5 seconds; no 'cooking' with aborted detonations.
+			timer = DETPACK_TIMER_MIN
+		deltimer(sound_timer)
+		sound_timer = null
+		nullvars()
+		return
+	if(!on) //need to be active and armed.
+		armed = FALSE
+		if(timer < DETPACK_TIMER_MIN) //reset to minimum 5 seconds; no 'cooking' with aborted detonations.
+			timer = DETPACK_TIMER_MIN
+		deltimer(sound_timer)
+		sound_timer = null
+		update_icon()
+		return
+	if(!armed)
+		disarm()
+
+	//Time to go boom
+	playsound(src.loc, 'sound/weapons/ring.ogg', 200, FALSE)
+	boom = TRUE
+	if(det_mode == TRUE) //If we're on demolition mode, big boom.
+		cell_explosion(plant_target, 315, 55)
+	else //if we're not, focused boom.
+		cell_explosion(plant_target, 450, 200, EXPLOSION_FALLOFF_SHAPE_EXPONENTIAL)
+	plant_target.plastique_act()
+
+	var/turf/origin = get_turf(plant_target)
+	if(origin && plant_direction)
+		var/list/affected
+		if(det_mode)
+			var/list/perpendicular_dirs = get_perpen_dir(plant_direction)
+			affected = list(
+				origin,
+				get_step(origin, perpendicular_dirs[1]),
+				get_step(origin, perpendicular_dirs[2]),
+			)
+		else
+			var/turf/ahead_one = get_step(origin, plant_direction)
+			affected = list(
+				origin,
+				ahead_one,
+				get_step(ahead_one, plant_direction),
+			)
+		for(var/turf/closed/T as anything in affected)
+			if(!istype(T, /turf/closed)) //undefined variable /turf/open/floor/plating/var/open_turf_type
+				continue
+			if(CHECK_BITFIELD(T.resistance_flags, PLASMACUTTER_IMMUNE) || CHECK_BITFIELD(T.resistance_flags, INDESTRUCTIBLE))
+				continue
+			T.ChangeTurf(T.open_turf_type)
+
+	qdel(src)
+
+/obj/item/explosive/plastique/detpack/trench/afterattack(atom/target, mob/user, flag)
+	if(!istype(target, /turf/closed) && !issignaler(target))
+		return
+	if(istype(target, /turf/closed))
+		plant_direction = get_cardinal_dir(user, target)
+	..()

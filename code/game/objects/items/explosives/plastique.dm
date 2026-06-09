@@ -239,7 +239,7 @@
 ////////////////////////////////////////////////
 
 /obj/item/explosive/plastique/trench
-	name = "trench charge"
+	name = "Trench charge"
 	desc = "Used for fast trench excavation. Since you have no idea what a trench is, you can probably use this thing to dig a hole in a rock."
 
 /obj/item/explosive/plastique/trench/afterattack(atom/target, mob/user, flag)
