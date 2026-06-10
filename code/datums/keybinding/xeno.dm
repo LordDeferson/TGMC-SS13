@@ -942,6 +942,41 @@
 	keybind_signal = COMSIG_XENOABILITY_SCATTER_SPIT
 	hotkey_keys = list("V")
 
+/datum/keybinding/xeno/toss_grenade
+	name = "toss_grenade"
+	full_name = "GLobadier: Toss Grenade"
+	description = "Toss a grenade at your target."
+	keybind_signal = COMSIG_XENOABILITY_TOSS_GRENADE
+	hotkey_keys = list("R")
+
+/datum/keybinding/xeno/pick_grenade
+	name = "pick_grenade"
+	full_name = "Globadier: Pick Grenade"
+	description = "Pick which grenade to use with Toss Grenade."
+	keybind_signal = COMSIG_XENOABILITY_PICK_GRENADE
+	hotkey_keys = list("F")
+
+/datum/keybinding/xeno/acid_mine
+	name = "acid_mine"
+	full_name = "Globadier: Place Acid Mine"
+	description = "Place a Acid Mine at your location."
+	keybind_signal = COMSIG_XENOABILITY_ACID_MINE
+	hotkey_keys = list("G")
+
+/datum/keybinding/xeno/gas_mine
+	name = "gas_mine"
+	full_name = "Globadier: Gas Mine"
+	description = "Place a Gas Mine at your location."
+	keybind_signal = COMSIG_XENOABILITY_GAS_MINE
+	hotkey_keys = list("H")
+
+/datum/keybinding/xeno/acid_rocket
+	name = "acid_rocket"
+	full_name = "GLobadier: Acid Rocket"
+	description = "Fire a acid rocket at your target, after a short charge up."
+	keybind_signal = COMSIG_XENOABILITY_ACID_ROCKET
+	hotkey_keys = list("Y")
+
 /datum/keybinding/xeno/slime_grenade
 	name = "slime_grenade"
 	full_name = "Spitter: Slime Grenade"
