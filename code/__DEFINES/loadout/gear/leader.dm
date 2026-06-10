@@ -21,7 +21,7 @@ GLOBAL_LIST_INIT(leader_gear_listed_products, list(
 	/obj/item/orbital_bombardment_beacon = list(CAT_LEDSUP, "Orbital beacon", 5, "blue"),
 	/obj/item/deployable_camera = list(CAT_LEDSUP, "Deployable Overwatch Camera", 1, "blue"),
 	/obj/item/storage/holster/blade/officer/valirapier/full = list(CAT_LEDSUP, "Vali Harvester rapier", 25, "blue"),
-	/obj/item/detpack = list(CAT_LEDSUP, "Detonation pack", 2, "orange3"),
+	/obj/item/explosive/plastique/detpack = list(CAT_LEDSUP, "Detonation pack", 2, "orange3"),
 	/obj/item/explosive/grenade/smokebomb/cloak = list(CAT_LEDSUP, "Cloak grenade", 1, "orange3"),
 	/obj/item/explosive/grenade/incendiary = list(CAT_LEDSUP, "M40 HIDP incendiary grenade", 1, "orange3"),
 	/obj/item/explosive/grenade/phosphorus = list(CAT_LEDSUP, "M40 HPDP phosphorous grenade", 5, "orange3"),

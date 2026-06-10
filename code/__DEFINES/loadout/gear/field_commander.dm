@@ -21,7 +21,7 @@ GLOBAL_LIST_INIT(commander_gear_listed_products, list(
 	/obj/item/clothing/glasses/night_vision = list(CAT_FCSUP, "BE-47 night vision goggles", 22, "blue"),
 	/obj/item/cell/night_vision_battery = list(CAT_FCSUP, "night vision battery", 5, "blue"),
 	/obj/item/explosive/plastique = list(CAT_FCSUP, "Plastique explosive", 2, "orange3"),
-	/obj/item/detpack = list(CAT_FCSUP, "Detonation pack", 2, "orange3"),
+	/obj/item/explosive/plastique/detpack = list(CAT_FCSUP, "Detonation pack", 2, "orange3"),
 	/obj/item/storage/box/visual/grenade/sticky = list(CAT_FCSUP, "M40 adhesive charge grenade box", 15, "blue"),
 	/obj/item/explosive/grenade/sticky = list(CAT_FCSUP, "M40 adhesive charge grenade", 2, "orange3"),
 	/obj/item/storage/box/visual/grenade/smokebomb = list(CAT_FCSUP, "M40 HSDP smokebomb grenade box", 15, "blue"),

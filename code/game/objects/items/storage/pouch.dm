@@ -430,7 +430,7 @@
 		/obj/item/explosive/grenade,
 		/obj/item/storage/box/explosive_mines,
 		/obj/item/ammo_magazine/rocket,
-		/obj/item/detpack,
+		/obj/item/explosive/plastique/detpack,
 		/obj/item/assembly/signaler,
 	))
 
@@ -439,9 +439,9 @@
 	fill_number = 4
 
 /obj/item/storage/pouch/explosive/detpack/PopulateContents()
-	new /obj/item/detpack(src)
-	new /obj/item/detpack(src)
-	new /obj/item/detpack(src)
+	new /obj/item/explosive/plastique/detpack(src)
+	new /obj/item/explosive/plastique/detpack(src)
+	new /obj/item/explosive/plastique/detpack(src)
 	new /obj/item/assembly/signaler(src)
 
 /obj/item/storage/pouch/explosive/razorburn/PopulateContents()
