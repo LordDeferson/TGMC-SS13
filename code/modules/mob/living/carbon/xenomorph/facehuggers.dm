@@ -616,6 +616,7 @@
 
 	if(stat == DEAD)
 		return
+	SEND_SIGNAL(src, COMSIG_FACE_HUGGER_DEATH)
 	stat = DEAD
 
 	deltimer(jumptimer)

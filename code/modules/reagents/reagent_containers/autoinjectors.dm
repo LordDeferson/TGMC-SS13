@@ -271,6 +271,19 @@
 	)
 	description_overlay = "Pe+"
 
+/obj/item/reagent_containers/hypospray/autoinjector/antitox_mix
+	name = "Anti-toxin mix 4"
+	desc = "An auto-injector loaded a cocktail of chemicals intended for rapid treatment of severe toxin damage. Do not use without proper medical supervision."
+	icon_state = "Toxic"
+	amount_per_transfer_from_this = 15
+	list_reagents = list(
+		/datum/reagent/medicine/hyronalin = 7.5,
+		/datum/reagent/medicine/dylovene = 7.5,
+		/datum/reagent/medicine/tricordrazine = 7.5,
+		/datum/reagent/medicine/arithrazine = 7.5,
+	)
+	description_overlay = "Tx4"
+
 /obj/item/reagent_containers/hypospray/autoinjector/russian_red
 	name = "emergency autoinjector"
 	desc = "An autoinjector loaded with 3 doses of Russian Red. Restores a significant amount of stamina and heals a large amount of damage, but causes slight permanent damage."

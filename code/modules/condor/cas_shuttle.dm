@@ -146,7 +146,7 @@
 	SSmonitor.process_human_positions()
 
 	#ifndef TESTING
-	if(SSmonitor.human_on_ground <= 5)
+	if(SSmonitor.human_on_ground <= 5 && !length(GLOB.active_cas_targets) && !GLOB.minidropship_start_loc)
 		to_chat(user, span_warning("The signal from the area of operations is too weak, you cannot route towards the battlefield."))
 		return
 	#endif
@@ -184,7 +184,7 @@
 
 	SSmonitor.process_human_positions()
 	#ifndef TESTING
-	if(SSmonitor.human_on_ground <= 5)
+	if(SSmonitor.human_on_ground <= 5 && !length(GLOB.active_cas_targets) && !GLOB.minidropship_start_loc)
 		to_chat(user, span_warning("The signal from the area of operations is too weak, you cannot route towards the battlefield."))
 		return
 	#endif

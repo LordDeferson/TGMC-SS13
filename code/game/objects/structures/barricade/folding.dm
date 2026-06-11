@@ -1,6 +1,7 @@
 #define BARRICADE_PLASTEEL_LOOSE 0
 #define BARRICADE_PLASTEEL_ANCHORED 1
 #define BARRICADE_PLASTEEL_FIRM 2
+#define MARINE_QUICKBUILD_ALLOWED (CHECK_BITFIELD(SSticker.mode?.round_type_flags, MODE_ALLOW_MARINE_QUICKBUILD) && (!SSticker.round_start_time || (world.time - SSticker.round_start_time) < 10 MINUTES))
 
 /obj/structure/barricade/folding
 	name = "plasteel barricade"
@@ -64,7 +65,7 @@
 
 	switch(build_state)
 		if(BARRICADE_PLASTEEL_FIRM) //Fully constructed step. Use screwdriver to remove the protection panels to reveal the bolts
-			if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_PLASTEEL)
+			if(!MARINE_QUICKBUILD_ALLOWED && user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_PLASTEEL)
 				var/fumbling_time = 1 SECONDS * ( SKILL_ENGINEER_PLASTEEL - user.skills.getRating(SKILL_ENGINEER) )
 				if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 					return
@@ -81,7 +82,7 @@
 			playsound(loc, 'sound/items/screwdriver.ogg', 25, 1)
 			build_state = BARRICADE_PLASTEEL_ANCHORED
 		if(BARRICADE_PLASTEEL_ANCHORED) //Protection panel removed step. Screwdriver to put the panel back, wrench to unsecure the anchor bolts
-			if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_PLASTEEL)
+			if(!MARINE_QUICKBUILD_ALLOWED && user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_PLASTEEL)
 				var/fumbling_time = 1 SECONDS * ( SKILL_ENGINEER_PLASTEEL - user.skills.getRating(SKILL_ENGINEER) )
 				if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 					return
@@ -107,7 +108,7 @@
 					cade.update_icon()
 			update_icon()
 		if(BARRICADE_PLASTEEL_LOOSE) //Anchor bolts loosened step. Apply crowbar to unseat the panel and take apart the whole thing.
-			if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_PLASTEEL)
+			if(!MARINE_QUICKBUILD_ALLOWED && user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_PLASTEEL)
 				var/fumbling_time = 5 SECONDS * ( SKILL_ENGINEER_PLASTEEL - user.skills.getRating(SKILL_ENGINEER) )
 				if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 					return
@@ -136,7 +137,7 @@
 
 	switch(build_state)
 		if(BARRICADE_PLASTEEL_ANCHORED) //Protection panel removed step. Screwdriver to put the panel back, wrench to unsecure the anchor bolts
-			if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_PLASTEEL)
+			if(!MARINE_QUICKBUILD_ALLOWED && user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_PLASTEEL)
 				var/fumbling_time = 1 SECONDS * ( SKILL_ENGINEER_PLASTEEL - user.skills.getRating(SKILL_ENGINEER) )
 				if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 					return
@@ -157,7 +158,7 @@
 				balloon_alert(user, "can't anchor here")
 				return
 
-			if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_PLASTEEL)
+			if(!MARINE_QUICKBUILD_ALLOWED && user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_PLASTEEL)
 				var/fumbling_time = 1 SECONDS * ( SKILL_ENGINEER_PLASTEEL - user.skills.getRating(SKILL_ENGINEER) )
 				if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 					return
@@ -258,3 +259,4 @@
 #undef BARRICADE_PLASTEEL_LOOSE
 #undef BARRICADE_PLASTEEL_ANCHORED
 #undef BARRICADE_PLASTEEL_FIRM
+#undef MARINE_QUICKBUILD_ALLOWED

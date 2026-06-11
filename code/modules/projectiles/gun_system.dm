@@ -1284,9 +1284,12 @@
 			return FALSE
 		if(get_magazine_reload_delay(new_mag) > 0 && user && !force)
 			to_chat(user, span_notice("You begin reloading [src] with [new_mag]."))
+			ADD_TRAIT(user, TRAIT_IS_RELOADING, REF(src))
 			if(!do_after(user, get_magazine_reload_delay(new_mag), NONE, user))
+				REMOVE_TRAIT(user, TRAIT_IS_RELOADING, REF(src))
 				to_chat(user, span_warning("Your reload was interupted!"))
 				return FALSE
+			REMOVE_TRAIT(user, TRAIT_IS_RELOADING, REF(src))
 		if(CHECK_BITFIELD(reciever_flags, AMMO_RECIEVER_ROTATES_CHAMBER))
 			for(var/i = 1, i <= length(chamber_items), i++)
 				if(chamber_items[i])
@@ -1321,9 +1324,12 @@
 			if(CHECK_BITFIELD(mag.magazine_flags, MAGAZINE_HANDFUL))
 				if(mag.reload_delay > 0 && user && !force)
 					to_chat(user, span_notice("You begin reloading [src] with [mag]."))
+					ADD_TRAIT(user, TRAIT_IS_RELOADING, REF(src))
 					if(!do_after(user, mag.reload_delay, NONE, user))
+						REMOVE_TRAIT(user, TRAIT_IS_RELOADING, REF(src))
 						to_chat(user, span_warning("Your reload was interupted!"))
 						return FALSE
+					REMOVE_TRAIT(user, TRAIT_IS_RELOADING, REF(src))
 				if(mag.current_rounds > 1)
 					items_to_insert += mag.create_handful(null, 1)
 				else

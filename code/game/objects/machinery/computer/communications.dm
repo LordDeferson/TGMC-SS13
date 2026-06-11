@@ -45,7 +45,6 @@
 	. = ..()
 	update_icon()
 
-
 /obj/machinery/computer/communications/Topic(href, href_list)
 	. = ..()
 	if(.)

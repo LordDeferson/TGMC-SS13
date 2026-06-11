@@ -1303,3 +1303,135 @@
 	description = "Recall your siderlings to follow you once more"
 	keybind_signal = COMSIG_XENOABILITY_RECALL_SPIDERLINGS
 	hotkey_keys = list("P")
+
+/datum/keybinding/xeno/flay
+	name = "Flay"
+	full_name = "Puppeteer: Flay"
+	description = "Takes a chunk of flesh from the victim marine through a quick swiping motion, adding biomass to your collection."
+	keybind_signal = COMSIG_XENOABILITY_FLAY
+
+/datum/keybinding/xeno/pincushion
+	name = "Pincushion"
+	full_name = "Puppeteer: Pincushion"
+	description = "Launch a spine from your tail."
+	keybind_signal = COMSIG_XENOABILITY_PINCUSHION
+
+/datum/keybinding/xeno/dread
+	name = "Dreadful Presence"
+	full_name = "Puppeteer: Dreadful Presence"
+	description = "Emit a menacing presence, striking fear into nearby organics."
+	keybind_signal = COMSIG_XENOABILITY_DREADFULPRESENCE
+
+/datum/keybinding/xeno/refurbish_husk
+	name = "Refurbish Husk"
+	full_name = "Puppeteer: Refurbish Husk"
+	description = "Harvest an unrevivable body to create a meat puppet."
+	keybind_signal = COMSIG_XENOABILITY_REFURBISHHUSK
+
+/datum/keybinding/xeno/stitch_puppet
+	name = "Stitch Puppet"
+	full_name = "Puppeteer: Stitch Puppet"
+	description = "Create a flesh homunculus to do your bidding."
+	keybind_signal = COMSIG_XENOABILITY_PUPPET
+
+/datum/keybinding/xeno/organic_bomb
+	name = "Organic Bomb"
+	full_name = "Puppeteer: Organic Bomb"
+	description = "Order one of your puppets to detonate."
+	keybind_signal = COMSIG_XENOABILITY_ORGANICBOMB
+
+/datum/keybinding/xeno/tendrils
+	name = "Tendrils"
+	full_name = "Puppeteer: Tendrils"
+	description = "Burrow freshly created tendrils to tangle organics."
+	keybind_signal = COMSIG_XENOABILITY_TENDRILS
+
+/datum/keybinding/xeno/unleash_puppet
+	name = "Unleash Puppets"
+	full_name = "Puppeteer: Unleash Puppets"
+	description = "Unleash puppets to attack nearby humans."
+	keybind_signal = COMSIG_XENOABILITY_UNLEASHPUPPETS
+
+/datum/keybinding/xeno/recall_puppet
+	name = "Recall Puppets"
+	full_name = "Puppeteer: Recall Puppets"
+	description = "Recall your puppets, making them follow you once more."
+	keybind_signal = COMSIG_XENOABILITY_RECALLPUPPETS
+
+/datum/keybinding/xeno/bestow_blessing
+	name = "Bestow Blessings"
+	full_name = "Puppeteer: Bestow Blessings"
+	description = "Give blessings to your puppets."
+	keybind_signal = COMSIG_XENOABILITY_BESTOWBLESSINGS
+
+/datum/keybinding/xeno/firecharge
+	name = "Fire Charge"
+	full_name = "Pyrogen: Fire Charge"
+	description = "Charge forward and attack a marine."
+	keybind_signal = COMSIG_XENOABILITY_FIRECHARGE
+
+/datum/keybinding/xeno/firenado
+	name = "Fire Storm"
+	full_name = "Pyrogen: Fire Storm"
+	description = "Unleash firestorms that move towards your targeted turf."
+	keybind_signal = COMSIG_XENOABILITY_FIRENADO
+
+/datum/keybinding/xeno/fireball
+	name = "Fireball"
+	full_name = "Pyrogen: Fireball"
+	description = "Unleash a fireball after a small windup."
+	keybind_signal = COMSIG_XENOABILITY_FIREBALL
+
+/datum/keybinding/xeno/inferno
+	name = "Inferno"
+	full_name = "Pyrogen: Inferno"
+	description = "Release a large radius of fire."
+	keybind_signal = COMSIG_XENOABILITY_INFERNO
+
+/datum/keybinding/xeno/infernal_trigger
+	name = "Infernal Trigger"
+	full_name = "Pyrogen: Infernal Trigger"
+	description = "Cause a burning marine to explode their flames outward."
+	keybind_signal = COMSIG_XENOABILITY_INFERNAL_TRIGGER
+
+/datum/keybinding/xeno/backhand
+	name = "Backhand"
+	full_name = "Dragon: Backhand"
+	description = "Smack a group of marines in front of you away and stun them."
+	keybind_signal = COMSIG_XENOABILITY_BACKHAND
+	hotkey_keys = list("Z")
+
+/datum/keybinding/xeno/fly
+	name = "Fly"
+	full_name = "Dragon: Fly"
+	description = "After a windup, begin to fly away. If you're already flying, land."
+	keybind_signal = COMSIG_XENOABILITY_FLY
+	hotkey_keys = list("F")
+
+/datum/keybinding/xeno/dragon_breath
+	name = "Dragon Breath"
+	full_name = "Dragon: Dragon Breath"
+	description = "After a windup, continuously blast fire in a cardinal direction."
+	keybind_signal = COMSIG_XENOABILITY_DRAGON_BREATH
+	hotkey_keys = list("C")
+
+/datum/keybinding/xeno/wind_current
+	name = "Wind Current"
+	full_name = "Dragon: Wind Current"
+	description = "After a windup, clear gas and knock away marines in a cone in front of you."
+	keybind_signal = COMSIG_XENOABILITY_WIND_CURRENT
+	hotkey_keys = list("V")
+
+/datum/keybinding/xeno/grab
+	name = "Grab"
+	full_name = "Dragon: Grab"
+	description = "After a windup, firmly grab a nearby marine in front of you."
+	keybind_signal = COMSIG_XENOABILITY_GRAB
+	hotkey_keys = list("B")
+
+/datum/keybinding/xeno/scorched_land
+	name = "Scorched Land"
+	full_name = "Dragon: Scorched Land"
+	description = "While flying, blast a line of fire in a direction."
+	keybind_signal = COMSIG_XENOABILITY_SCORCHED_LAND
+	hotkey_keys = list("G")

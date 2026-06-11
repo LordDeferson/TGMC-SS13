@@ -140,6 +140,7 @@
 			data["tgui_input"] = tgui_input
 			data["tgui_input_big_buttons"] = tgui_input_big_buttons
 			data["tgui_input_buttons_swap"] = tgui_input_buttons_swap
+			data["auto_open_changelogs"] = auto_open_changelogs
 			data["clientfps"] = clientfps
 			data["chat_on_map"] = chat_on_map
 			data["max_chat_length"] = max_chat_length
@@ -168,6 +169,7 @@
 			data["fast_mc_refresh"] = fast_mc_refresh
 			data["split_admin_tabs"] = split_admin_tabs
 			data["hear_ooc_anywhere_as_staff"] = hear_ooc_anywhere_as_staff
+			data["show_ooc_country_flag"] = show_ooc_country_flag
 			data["volume_adminhelp"] = volume_adminhelp
 			data["volume_adminmusic"] = volume_adminmusic
 			data["volume_ambience"] = volume_ambience
@@ -848,6 +850,9 @@
 		if("tgui_input_buttons_swap")
 			tgui_input_buttons_swap = !tgui_input_buttons_swap
 
+		if("auto_open_changelogs")
+			auto_open_changelogs = !auto_open_changelogs
+
 		if("clientfps")
 			var/desiredfps = text2num(params["newValue"])
 			if(!isnum(desiredfps))
@@ -1108,6 +1113,8 @@
 
 		if("hear_ooc_anywhere_as_staff")
 			hear_ooc_anywhere_as_staff = !hear_ooc_anywhere_as_staff
+		if("show_ooc_country_flag")
+			show_ooc_country_flag = !show_ooc_country_flag
 
 		if("volume_adminhelp")
 			volume_adminhelp = params["newValue"]

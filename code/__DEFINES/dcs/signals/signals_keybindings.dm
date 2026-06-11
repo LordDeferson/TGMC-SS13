@@ -98,6 +98,9 @@
 #define COMSIG_KB_DEFENDORDER "keybind_defendorder"
 #define COMSIG_KB_RETREATORDER "keybind_retreatorder"
 #define COMSIG_KB_VEHICLEHONK "keybind_vehiclehonk"
+#define COMSIG_ABILITY_PLACE_HOLOGRAM "ability_place_hologram"
+#define COMSIG_ABILITY_SELECT_BUILDTYPE "ability_select_buildtype"
+#define COMSIG_VEHICLEABILITY_TESLA "vehicleability_tesla"
 
 //Item toggle keybinds
 #define COMSIG_ITEM_TOGGLE_JETPACK "item_toggle_jetpack"
@@ -373,3 +376,14 @@
 #define COMSIG_XENOABILITY_WIND_CURRENT "xenoability_wind_current"
 #define COMSIG_XENOABILITY_GRAB "xenoability_grab"
 #define COMSIG_XENOABILITY_SCORCHED_LAND "xenoability_scorched_land"
+
+#define COMSIG_XENOABILITY_TENDRILS "xenoability_tendrils"
+#define COMSIG_XENOABILITY_ORGANICBOMB "xenoability_puppeteerorganicbomb"
+#define COMSIG_XENOABILITY_PUPPET "xenoability_puppet"
+#define COMSIG_XENOABILITY_REFURBISHHUSK "xenoability_refurbishhusk"
+#define COMSIG_XENOABILITY_DREADFULPRESENCE "xenoability_dreadfulpresence"
+#define COMSIG_XENOABILITY_PINCUSHION "xenoability_pincushion"
+#define COMSIG_XENOABILITY_FLAY "xenoability_flay"
+#define COMSIG_XENOABILITY_UNLEASHPUPPETS "xenoability_unleashpuppets"
+#define COMSIG_XENOABILITY_RECALLPUPPETS "xenoability_recallpuppets"
+#define COMSIG_XENOABILITY_BESTOWBLESSINGS "xenoability_giveblessings"

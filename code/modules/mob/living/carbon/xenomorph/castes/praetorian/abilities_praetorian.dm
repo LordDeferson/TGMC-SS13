@@ -1202,3 +1202,11 @@ c
 	SIGNAL_HANDLER
 	UnregisterSignal(xeno_owner, list(COMSIG_MOVABLE_MOVED, COMSIG_XENO_OBJ_THROW_HIT, COMSIG_MOVABLE_POST_THROW, COMSIG_XENOMORPH_LEAP_BUMP))
 	xeno_owner.xeno_flags &= ~XENO_LEAPING
+
+/obj/effect/xeno/abduct_warning
+	icon = 'icons/Xeno/Effects.dmi'
+	icon_state = "abduct_hook"
+
+/obj/effect/xeno/abduct_warning/Initialize(mapload)
+	. = ..()
+	notify_ai_hazard()

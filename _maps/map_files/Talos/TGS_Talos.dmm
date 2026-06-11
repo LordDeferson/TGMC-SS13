@@ -11880,7 +11880,7 @@
 	},
 /area/mainship/squads/delta)
 "hfg" = (
-/obj/machinery/vending/medical,
+/obj/machinery/vending/medical/shipside,
 /turf/open/floor/mainship/metal,
 /area/mainship/squads/delta)
 "hfj" = (
@@ -23903,7 +23903,7 @@
 /turf/open/floor/mainship/metal/full,
 /area/mainship/living/cryo_cells)
 "obl" = (
-/obj/machinery/vending/medical,
+/obj/machinery/vending/medical/shipside,
 /turf/open/floor/mainship/metal,
 /area/mainship/squads/alpha)
 "obN" = (
@@ -30537,7 +30537,7 @@
 /obj/machinery/light/mainship{
 	dir = 1
 	},
-/obj/machinery/vending/medical,
+/obj/machinery/vending/medical/shipside,
 /turf/open/floor/prison/whitepurple{
 	dir = 9
 	},
@@ -31611,7 +31611,7 @@
 /turf/open/floor/mainship/metal/full,
 /area/mainship/squads/bravo)
 "sEL" = (
-/obj/machinery/vending/medical,
+/obj/machinery/vending/medical/shipside,
 /turf/open/floor/mainship/metal,
 /area/mainship/squads/charlie)
 "sFh" = (
@@ -32930,7 +32930,7 @@
 /turf/open/floor/mainship/silver/full,
 /area/mainship/command/telecomms)
 "txd" = (
-/obj/machinery/vending/medical,
+/obj/machinery/vending/medical/shipside,
 /turf/open/floor/mainship/metal,
 /area/mainship/squads/bravo)
 "txi" = (

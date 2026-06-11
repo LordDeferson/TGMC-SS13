@@ -887,3 +887,7 @@
 ///Returns the number that shows how far an AM is offset when submerged in this turf
 /turf/proc/get_submerge_depth()
 	return 0
+/turf/proc/is_covered()
+	if(SEND_SIGNAL(src, COMSIG_TURF_CHECK_COVERED) & TURF_COVERED)
+		return TRUE
+	return FALSE

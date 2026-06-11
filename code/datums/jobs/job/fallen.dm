@@ -15,6 +15,8 @@
 	SIGNAL_HANDLER
 	if(QDELING(source))
 		return
+	if(source.client || source.key)
+		return
 	source.visible_message(span_danger("[source] suddenly disappears!"))
 	qdel(source)
 

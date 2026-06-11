@@ -124,14 +124,13 @@
 	icon_vend = "bloodvendor-vend"
 	icon_deny = "bloodvendor-deny"
 	product_slogans = "The best blood on the market!;Totally came from an ethical source!;O negative is the universal donor, use it!;Prevent hypovolemic shock starting today!"
-	req_one_access = list(ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_MEDPREP)
 	products = list(
 		/obj/item/reagent_containers/blood/APlus = 5,
 		/obj/item/reagent_containers/blood/AMinus = 5,
 		/obj/item/reagent_containers/blood/BPlus = 5,
 		/obj/item/reagent_containers/blood/BMinus = 5,
 		/obj/item/reagent_containers/blood/OPlus = 5,
-		/obj/item/reagent_containers/blood/OMinus = 5,
+		/obj/item/reagent_containers/blood/OMinus = -1,
 		/obj/item/reagent_containers/blood/empty = 10,
 	)
 

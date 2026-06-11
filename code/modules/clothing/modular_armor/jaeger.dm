@@ -165,6 +165,12 @@
 	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/trooper, /obj/item/armor_module/storage/helmet)
 	greyscale_config = /datum/greyscale_config/armor_mk2/trooper
 
+/obj/item/clothing/head/modular/marine/mjolnir_open
+	name = "Jaeger Pattern Open Mjolnir Helmet"
+	desc = "Usually paired with the Jaeger Combat Exoskeleton. Can mount utility functions on the helmet hard points. Has Mjolnir markings."
+	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/mjolnir_open, /obj/item/armor_module/storage/helmet)
+	greyscale_config = /datum/greyscale_config/armor_mk2/mjolnir_open
+
 /obj/item/clothing/head/modular/marine/kabuto
 	name = "Style Pattern Kabuto Helmet"
 	desc = "Usually paired with the Jaeger Combat Exoskeleton. Can mount utility functions on the helmet hard points. Has Kabuto markings"
@@ -215,5 +221,4 @@
 	desc = "Usually paired with the FleckTex WY-01 modular exoskeleton. Can mount utility functions on the helmet hard points. Has Raider markings"
 	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/markonevisor, /obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/secondary_color/helm)
 	greyscale_config = /datum/greyscale_config/hardsuit_variant
-
 

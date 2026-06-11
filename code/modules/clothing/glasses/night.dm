@@ -146,6 +146,7 @@
 	color_cutoffs = list(40, 15, 10)
 	vision_flags = SEE_TURFS
 	toggleable = TRUE
+	tint = COLOR_RED_GRAY
 	goggles_layer = TRUE
 	active = FALSE
 	activation_sound = 'sound/effects/nightvision.ogg'
@@ -154,11 +155,12 @@
 	///The battery inside
 	var/obj/item/cell/night_vision_battery/battery
 	///How much energy this module needs when activated
-	var/active_energy_cost = 4	//Little over 4 minutes of use
+	var/active_energy_cost = 4	//2 minute of use
 	///Looping sound to play
 	var/datum/looping_sound/active_sound = /datum/looping_sound/scan_pulse
 	///How loud the looping sound should be
-	var/looping_sound_volume = 25
+	var/looping_sound_volume = 5
+	var/last_active_time = 0
 
 /obj/item/clothing/glasses/night_vision/Initialize(mapload)
 	. = ..()
@@ -167,6 +169,7 @@
 	active_sound = new active_sound()
 	active_sound.volume = looping_sound_volume
 	update_worn_state()
+	last_active_time = world.time
 
 /obj/item/clothing/glasses/night_vision/examine(mob/user)
 	. = ..()
@@ -207,6 +210,10 @@
 	user.temporarilyRemoveItemFromInventory(I)
 	I.forceMove(src)
 	battery = I
+
+	if(battery.charge < battery.maxcharge)
+		START_PROCESSING(SSobj, src)
+
 	return TRUE
 
 ///Eject the internal battery, if there is one
@@ -222,13 +229,15 @@
 
 	if(active)
 		activate(user)
+	else
+		STOP_PROCESSING(SSobj, src)
 
 	return TRUE
 
 /obj/item/clothing/glasses/night_vision/activate(mob/user)
 	if(active)
-		STOP_PROCESSING(SSobj, src)
 		active_sound.stop(src)
+		last_active_time = world.time
 	else
 		if(!battery || battery.charge < active_energy_cost)
 			if(user)
@@ -241,12 +250,19 @@
 	return ..()
 
 /obj/item/clothing/glasses/night_vision/process()
-	if(!battery?.use(active_energy_cost))
-		if(ismob(loc))	//If it's deactivated while being worn, pass on the reference to activate() so that the user's sight is updated
-			activate(loc)
-		else
-			activate()
-		return PROCESS_KILL
+	if(active)
+		if(!battery?.use(active_energy_cost))
+			if(ismob(loc))	//If it's deactivated while being worn, pass on the reference to activate() so that the user's sight is updated
+				activate(loc)
+			else
+				activate()
+
+	else
+		if(!battery || battery.charge >= battery.maxcharge)
+			return PROCESS_KILL
+
+		if(world.time > last_active_time + 100)
+			battery.charge = min(battery.charge + 2, battery.maxcharge)
 
 ///Simple proc to update the worn state of the glasses; will use the active value by default if no argument passed
 /obj/item/clothing/glasses/night_vision/proc/update_worn_state(state = active)
@@ -271,8 +287,8 @@
 	icon_state = "night_vision_mounted"
 	tint = COLOR_BLUE
 	vision_flags = NONE
-	active_energy_cost = 2	//A little over 7 minutes of use
-	looping_sound_volume = 50
+	active_energy_cost = 2	//4 minutes of use
+	looping_sound_volume = 15
 
 /obj/item/clothing/glasses/night_vision/mounted/Initialize(mapload)
 	. = ..()

@@ -116,6 +116,10 @@
 	///The strength of our aura. Zero means we can't emit any.
 	var/aura_strength = 0
 
+	// *** Puppeteer Abilities *** //
+	var/flay_plasma_gain = 0
+	var/max_puppets = 0
+
 	// *** Defiler Abilities *** //
 	var/list/available_reagents_define = list() //reagents available for select reagent
 
@@ -261,7 +265,7 @@ GLOBAL_LIST_INIT(strain_list, init_glob_strain_list())
 /mob/living/carbon/xenomorph
 	name = "Drone"
 	desc = "What the hell is THAT?"
-	icon = 'icons/Xeno/castes/larva.dmi'
+	icon = 'icons/Xeno/castes/larva/larva.dmi'
 	icon_state = "Drone Walking"
 	speak_emote = list("hisses")
 	melee_damage = 5 //Arbitrary damage value
@@ -295,7 +299,7 @@ GLOBAL_LIST_INIT(strain_list, init_glob_strain_list())
 	var/xeno_flags = NONE
 
 	///Used for keeping the effects icon of current skin, changeable with skin toggling
-	var/effects_icon = 'icons/Xeno/castes/larva.dmi'
+	var/effects_icon = 'icons/Xeno/castes/larva/larva.dmi'
 	/// List of alternative skins to which xeno is able to change, you put only skin datums in here
 	var/list/skins = list()
 
@@ -442,4 +446,3 @@ GLOBAL_LIST_INIT(strain_list, init_glob_strain_list())
 	COOLDOWN_DECLARE(xeno_resting_cooldown)
 	///The unresting cooldown
 	COOLDOWN_DECLARE(xeno_unresting_cooldown)
-

@@ -160,6 +160,7 @@
 	READ_FILE(S["fast_mc_refresh"], fast_mc_refresh)
 	READ_FILE(S["split_admin_tabs"], split_admin_tabs)
 	READ_FILE(S["hear_ooc_anywhere_as_staff"], hear_ooc_anywhere_as_staff)
+	READ_FILE(S["show_ooc_country_flag"], show_ooc_country_flag)
 
 	READ_FILE(S["key_bindings"], key_bindings)
 	READ_FILE(S["slot_draw_order"], slot_draw_order_pref)
@@ -183,6 +184,7 @@
 	READ_FILE(S["tgui_input"], tgui_input)
 	READ_FILE(S["tgui_input_big_buttons"], tgui_input_big_buttons)
 	READ_FILE(S["tgui_input_buttons_swap"], tgui_input_buttons_swap)
+	READ_FILE(S["auto_open_changelogs"], auto_open_changelogs)
 
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
@@ -256,10 +258,12 @@
 	tgui_input = sanitize_integer(tgui_input, FALSE, TRUE, initial(tgui_input))
 	tgui_input_big_buttons = sanitize_integer(tgui_input_big_buttons, FALSE, TRUE, initial(tgui_input_big_buttons))
 	tgui_input_buttons_swap = sanitize_integer(tgui_input_buttons_swap, FALSE, TRUE, initial(tgui_input_buttons_swap))
+	auto_open_changelogs = sanitize_integer(auto_open_changelogs, FALSE, TRUE, initial(auto_open_changelogs))
 
 	fast_mc_refresh = sanitize_integer(fast_mc_refresh, FALSE, TRUE, initial(fast_mc_refresh))
 	split_admin_tabs = sanitize_integer(split_admin_tabs, FALSE, TRUE, initial(split_admin_tabs))
 	hear_ooc_anywhere_as_staff = sanitize_integer(hear_ooc_anywhere_as_staff, FALSE, TRUE, initial(hear_ooc_anywhere_as_staff))
+	show_ooc_country_flag = sanitize_integer(show_ooc_country_flag, FALSE, TRUE, initial(show_ooc_country_flag))
 	return TRUE
 
 
@@ -344,6 +348,7 @@
 	fast_mc_refresh = sanitize_integer(fast_mc_refresh, FALSE, TRUE, initial(fast_mc_refresh))
 	split_admin_tabs = sanitize_integer(split_admin_tabs, FALSE, TRUE, initial(split_admin_tabs))
 	hear_ooc_anywhere_as_staff = sanitize_integer(hear_ooc_anywhere_as_staff, FALSE, TRUE, initial(hear_ooc_anywhere_as_staff))
+	show_ooc_country_flag = sanitize_integer(show_ooc_country_flag, FALSE, TRUE, initial(show_ooc_country_flag))
 
 	WRITE_FILE(S["default_slot"], default_slot)
 	WRITE_FILE(S["lastchangelog"], lastchangelog)
@@ -408,11 +413,13 @@
 	WRITE_FILE(S["tgui_input"], tgui_input)
 	WRITE_FILE(S["tgui_input_big_buttons"], tgui_input_big_buttons)
 	WRITE_FILE(S["tgui_input_buttons_swap"], tgui_input_buttons_swap)
+	WRITE_FILE(S["auto_open_changelogs"], auto_open_changelogs)
 
 	// Admin options
 	WRITE_FILE(S["fast_mc_refresh"], fast_mc_refresh)
 	WRITE_FILE(S["split_admin_tabs"], split_admin_tabs)
 	WRITE_FILE(S["hear_ooc_anywhere_as_staff"], hear_ooc_anywhere_as_staff)
+	WRITE_FILE(S["show_ooc_country_flag"], show_ooc_country_flag)
 
 	return TRUE
 
