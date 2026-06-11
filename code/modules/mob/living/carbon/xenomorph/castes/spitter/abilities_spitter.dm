@@ -150,14 +150,12 @@
 #define ACID_GRENADE /obj/item/explosive/grenade/globadier
 #define FIRE_GRENADE /obj/item/explosive/grenade/globadier/incen
 #define RESIN_GRENADE /obj/item/explosive/grenade/globadier/resin
-#define GAS_GRENADE /obj/item/explosive/grenade/globadier/gas
 #define HEAL_GRENADE /obj/item/explosive/grenade/globadier/heal
 //List of all images used for grenades, in the radial selection menu
 GLOBAL_LIST_INIT(globadier_images_list, list(
 	ACID_GRENADE = image('icons/xeno/effects.dmi', icon_state = "acid"),
 	FIRE_GRENADE = image('icons/effects/fire.dmi', icon_state = "purple_3"),
 	RESIN_GRENADE = image('icons/xeno/effects.dmi', icon_state = "sticky"),
-	GAS_GRENADE = image('icons/effects/effects.dmi', icon_state = "smoke"),
 	HEAL_GRENADE = image('icons/effects/effects.dmi', icon_state = "mech_toxin"),
 ))
 
@@ -260,7 +258,7 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 	owner.balloon_alert(owner, "Max Grenades!")
 
 /// Handles selecting which grenade the xeno wants
-/datum/action/ability/activable/xeno/toss_grenade/proc/selectgrenade()4
+/datum/action/ability/activable/xeno/toss_grenade/proc/selectgrenade()
 	var/grenade_choice = show_radial_menu(owner, owner, GLOB.globadier_images_list, radius = 48)
 	if(!grenade_choice)
 		return

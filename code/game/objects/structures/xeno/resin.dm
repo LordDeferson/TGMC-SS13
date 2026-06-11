@@ -89,7 +89,7 @@
 /obj/structure/xeno/acid_mine
 	name = "acid mine"
 	desc = "A weird bulb, filled with acid."
-	icon = 'icons/obj/items/mines.dmi'
+	icon = 'icons/obj/items/mine.dmi'
 	icon_state = "acid_mine"
 	density = FALSE
 	opacity = FALSE
