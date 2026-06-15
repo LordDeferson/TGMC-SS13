@@ -155,6 +155,8 @@
 #define COMSIG_XENOABILITY_SPRAY_ACID "xenoability_spray_acid"
 #define COMSIG_XENOABILITY_DASH "xenoability_dash"
 #define COMSIG_XENOABILITY_ACID_DASH "xenoability_acid_dash"
+#define COMSIG_XENOABILITY_ACID_DASH_MELTER "xenoability_acid_dash_melter"
+#define COMSIG_XENOABILITY_ACIDIC_MISSILE "xenoability_acidic_missile"
 #define COMSIG_XENOABILITY_SHORT_SPRAY_ACID "xenoability_short_spray_acid"
 #define COMSIG_XENOABILITY_XENO_SPIT "xenoability_xeno_spit"
 #define COMSIG_XENOABILITY_HIDE "xenoability_hide"
@@ -189,6 +191,7 @@
 #define COMSIG_XENOABILITY_ROOT "xenoability_root"
 #define COMSIG_XENOABILITY_BOMBARD "xenoability_bombard"
 #define COMSIG_XENOABILITY_ACID_SHROUD "xenoability_acid_shroud"
+#define COMSIG_XENOABILITY_ACID_SHROUD_MELTER "xenoability_acid_shroud_melter"
 #define COMSIG_XENOABILITY_ACID_SHROUD_SELECT "xenoability_acid_shroud_select"
 
 #define COMSIG_XENOABILITY_THROW_HUGGER "xenoability_throw_hugger"
