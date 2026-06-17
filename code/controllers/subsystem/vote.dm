@@ -81,13 +81,14 @@ SUBSYSTEM_DEF(vote)
 			if(!C || C.is_afk())
 				non_voters -= non_voter_ckey
 		if(length(non_voters) > 0)
+			var/non_voter_weight = 0.5
 			if(mode == "restart")
-				choices["Continue Playing"] += length(non_voters)
+				choices["Continue Playing"] += length(non_voters) * non_voter_weight
 				if(choices["Continue Playing"] >= greatest_votes)
 					greatest_votes = choices["Continue Playing"]
 			else if(mode == "gamemode")
 				if(GLOB.master_mode in choices)
-					choices[GLOB.master_mode] += length(non_voters)
+					choices[GLOB.master_mode] += length(non_voters) * non_voter_weight
 					if(choices[GLOB.master_mode] >= greatest_votes)
 						greatest_votes = choices[GLOB.master_mode]
 	. = list()
