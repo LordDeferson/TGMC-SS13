@@ -1,3 +1,24 @@
+
+/atom/movable/screen/map_view/preference_preview
+	/// All the plane masters that need to be applied.
+	var/atom/movable/screen/background/screen_bg
+
+/atom/movable/screen/map_view/preference_preview/Destroy()
+	QDEL_NULL(screen_bg)
+	return ..()
+
+/atom/movable/screen/map_view/preference_preview/generate_view(map_key)
+	. = ..()
+	screen_bg = new
+	screen_bg.del_on_map_removal = FALSE
+	screen_bg.assigned_map = assigned_map
+	screen_bg.icon_state = "clear"
+	screen_bg.fill_rect(1, 1, 4, 1)
+
+/atom/movable/screen/map_view/preference_preview/display_to_client(client/show_to)
+	show_to.register_map_obj(screen_bg)
+	return ..()
+
 /datum/preferences/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
@@ -5,15 +26,11 @@
 		ui = new(user, src, "PlayerPreferences", "Preferences")
 		ui.set_autoupdate(FALSE)
 		ui.open()
-		// HACK: Without this the character starts out really tiny because of some BYOND bug.
-		// You can fix it by changing a preference, so let's just forcably update the body to emulate this.
-		// Lemon from the future: this issue appears to replicate if the byond map (what we're relaying here)
-		// Is shown while the client's mouse is on the screen. As soon as their mouse enters the main map, it's properly scaled
-		// I hate this place
-		addtimer(CALLBACK(src, PROC_REF(update_preview_icon)), 1 SECONDS)
+		screen_main.display_to(user, ui.window)
 
 /datum/preferences/ui_close(mob/user)
 	. = ..()
+	user.client?.clear_map(map_name)
 	user.client?.clear_character_previews()
 
 /datum/preferences/ui_state(mob/user)
@@ -203,6 +220,7 @@
 	. = list()
 	switch(tab_index)
 		if(CHARACTER_CUSTOMIZATION, PRED_CHARACTER_CUSTOMIZATION)
+			update_preview_icon()
 			.["mapRef"] = "player_pref_map"
 		if(GEAR_CUSTOMIZATION)
 			.["clothing"] = list(

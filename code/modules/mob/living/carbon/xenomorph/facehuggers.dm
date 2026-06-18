@@ -281,12 +281,9 @@
 
 /obj/item/clothing/mask/facehugger/update_overlays()
 	. = ..()
-	if(overlays)
-		cut_overlays()
-
 	if(!about_to_jump)
 		return
-	add_overlay(image('icons/effects/danger.dmi', "danger_xeno"))
+	. += image('icons/obj/items/grenade.dmi', "danger")
 
 ///Applies an alert overlay when the hugger is about to jump
 /obj/item/clothing/mask/facehugger/proc/apply_danger_overlay()
