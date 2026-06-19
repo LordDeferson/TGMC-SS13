@@ -108,51 +108,16 @@
 					continue
 				status_hud.icon_state = "od"
 				return TRUE
-
-			var/has_internal_bleeding = FALSE
 			for(var/datum/limb/limb AS in limbs)
-				if(CHECK_BITFIELD(limb.limb_status, LIMB_BROKEN) && !CHECK_BITFIELD(limb.limb_status, LIMB_STABILIZED) && !CHECK_BITFIELD(limb.limb_status, LIMB_SPLINTED))
-					status_hud.icon_state = "fracture"
+				if(!CHECK_BITFIELD(limb.limb_status, LIMB_BROKEN) || CHECK_BITFIELD(limb.limb_status, LIMB_STABILIZED) || CHECK_BITFIELD(limb.limb_status, LIMB_SPLINTED))
+					continue
+				status_hud.icon_state = "fracture"
+				return TRUE
+				for(var/datum/wound/wound in limb.wounds)
+					if(!istype(wound, /datum/wound/internal_bleeding))
+						continue
+					status_hud.icon_state = "blood"
 					return TRUE
-				if(!has_internal_bleeding)
-					for(var/datum/wound/wound in limb.wounds)
-						if(istype(wound, /datum/wound/internal_bleeding))
-							has_internal_bleeding = TRUE
-
-			if(has_internal_bleeding && !reagents.has_reagent(/datum/reagent/medicine/quickclot))
-				status_hud.icon_state = "blood"
-				return TRUE
-
-			if(reagents.has_reagent(/datum/reagent/medicine/russian_red))
-				status_hud.icon_state = "russian_red"
-				return TRUE
-
-			var/nanites_amt = reagents.get_reagent_amount(/datum/reagent/medicalnanites)
-			if(nanites_amt > 25)
-				status_hud.icon_state = "nanites"
-				return TRUE
-			else if(nanites_amt > 15)
-				status_hud.icon_state = "nanites_medium"
-				return TRUE
-			else if(nanites_amt > 0)
-				status_hud.icon_state = "nanites_low"
-				return TRUE
-
-			if(reagents.has_reagent(/datum/reagent/medicine/ifosfamide))
-				status_hud.icon_state = "ifosfamide"
-				return TRUE
-
-			var/sulfa_amt = reagents.get_reagent_amount(/datum/reagent/medicine/sulfasalazine)
-			if(sulfa_amt > 60)
-				status_hud.icon_state = "sulfasalazine"
-				return TRUE
-			else if(sulfa_amt > 30)
-				status_hud.icon_state = "sulfasalazine_low"
-				return TRUE
-			else if(sulfa_amt > 0)
-				status_hud.icon_state = "sulfasalazine_crit_low"
-				return TRUE
-
 			status_hud.icon_state = "healthy"
 			return TRUE
 	return FALSE
@@ -339,9 +304,6 @@
 	var/static/image/ifosfamide_image = image('icons/mob/hud/reagent.dmi', icon_state = "ifosfamide")
 	var/static/image/jellyjuice_image = image('icons/mob/hud/reagent.dmi', icon_state = "jellyjuice")
 	var/static/image/russianred_image = image('icons/mob/hud/reagent.dmi', icon_state = "russian_red")
-	var/static/image/sulfasalazine_image = image('icons/mob/hud/reagent.dmi', icon_state = "sulfasalazine")
-	var/static/image/sulfasalazine_low_image = image('icons/mob/hud/reagent.dmi', icon_state = "sulfasalazine_low")
-	var/static/image/sulfasalazine_crit_low_image = image('icons/mob/hud/reagent.dmi', icon_state = "sulfasalazine_crit_low")
 
 
 	var/neurotox_amount = reagents.get_reagent_amount(/datum/reagent/toxin/xeno_neurotoxin)
@@ -353,7 +315,6 @@
 	var/medicalnanites_amount = reagents.get_reagent_amount(/datum/reagent/medicalnanites)
 	var/russianred_amount = reagents.get_reagent_amount(/datum/reagent/medicine/russian_red)
 	var/ifosfamide_amount = reagents.get_reagent_amount(/datum/reagent/medicine/ifosfamide)
-	var/sulfasalazine_amount = reagents.get_reagent_amount(/datum/reagent/medicine/sulfasalazine)
 
 
 	if(neurotox_amount > 10) //Blinking image for particularly high concentrations
@@ -393,13 +354,6 @@
 
 	if(russianred_amount > 0)
 		xeno_reagent.overlays += russianred_image
-
-	if(sulfasalazine_amount > 60)
-		xeno_reagent.overlays += sulfasalazine_image
-	else if(sulfasalazine_amount > 30)
-		xeno_reagent.overlays += sulfasalazine_low_image
-	else if(sulfasalazine_amount > 0)
-		xeno_reagent.overlays += sulfasalazine_crit_low_image
 
 	if(jellyjuice_amount > 0)
 		xeno_reagent.overlays += jellyjuice_image

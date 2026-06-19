@@ -14,13 +14,6 @@
 	)
 	cost = 300
 
-/datum/supply_packs/medical/Sulfasalazine
-	name = "Sulfasalazine autoinjector"
-	contains = list(
-		/obj/item/reagent_containers/hypospray/autoinjector/sulfasalazine,
-	)
-	cost = 250
-
 /datum/supply_packs/medical/biomass
 	name = "Biomass beaker"
 	contains = list(
