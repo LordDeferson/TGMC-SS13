@@ -136,6 +136,7 @@
 
 /datum/xeno_caste/praetorian/oppressor
 	caste_type_path = /mob/living/carbon/xenomorph/praetorian/oppressor
+	base_caste_type_path = /mob/living/carbon/xenomorph/praetorian
 	upgrade_name = ""
 	caste_name = "Praetorian"
 	display_name = "Oppressor"
