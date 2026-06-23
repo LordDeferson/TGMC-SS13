@@ -413,7 +413,7 @@
 	new /obj/effect/temp_visual/telekinesis(get_turf(owner_xeno))
 	to_chat(owner_xeno, span_notice("We feel our wounds close up."))
 
-	var/amount = owner_xeno.maxHealth * GORGER_REJUVENATE_HEAL
+	var/amount = (owner_xeno.maxHealth * GORGER_REJUVENATE_HEAL) * 1.5
 	owner_xeno.heal_xeno_damage(amount, FALSE)
 	tick_damage = 0
 
@@ -678,10 +678,12 @@
 	if(xeno_owner.plasma_stored < plasma_drain)
 		to_chat(xeno_owner, span_notice("Our feast has come to an end..."))
 		xeno_owner.remove_status_effect(STATUS_EFFECT_XENO_FEAST)
+		return
 
 	var/heal_amount = xeno_owner.maxHealth * 0.08
-	xeno_owner.heal_xeno_damage(heal_amount, FALSE)
-	xeno_owner.adjust_overheal(heal_amount * 0.5)
+	var/self_heal_amount = heal_amount * 1.5
+	xeno_owner.heal_xeno_damage(self_heal_amount, FALSE)
+	xeno_owner.adjust_overheal(self_heal_amount * 0.5)
 	xeno_owner.use_plasma(plasma_drain)
 
 	for(var/mob/living/carbon/xenomorph/target_xeno AS in cheap_get_xenos_near(xeno_owner, 4))
