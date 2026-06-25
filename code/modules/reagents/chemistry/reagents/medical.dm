@@ -110,8 +110,8 @@
 
 /datum/reagent/medicine/paracetamol/overdose_process(mob/living/L, metabolism)
 	L.hallucination = max(L.hallucination, 2)
-	L.reagent_pain_modifier += PAIN_REDUCTION_VERY_LIGHT
-	L.apply_damage(0.5*effect_str, TOX)
+	L.reagent_pain_modifier -= PAIN_REDUCTION_VERY_LIGHT
+	L.apply_damage(1.5*effect_str, TOX)
 
 /datum/reagent/medicine/paracetamol/overdose_crit_process(mob/living/L, metabolism)
 	L.apply_damage(3*effect_str, TOX)
