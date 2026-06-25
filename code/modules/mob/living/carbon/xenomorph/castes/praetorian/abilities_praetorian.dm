@@ -537,6 +537,8 @@ GLOBAL_LIST_INIT(acid_spray_hit, typecacheof(list(/obj/structure/barricade, /obj
 		adjusted_mult += 0.25
 	if(living_target.has_status_effect(STATUS_EFFECT_MELTING))
 		adjusted_mult += 0.25
+	if(living_target.has_status_effect(STATUS_EFFECT_LIFEDRAIN))
+		adjusted_mult += 0.25
 	//big bonus if target has a "helpless" debuff
 	if(living_target.has_status_effect(STATUS_EFFECT_PARALYZED) || living_target.has_status_effect(STATUS_EFFECT_STUN) || living_target.has_status_effect(STATUS_EFFECT_KNOCKDOWN))
 		adjusted_mult += 0.5

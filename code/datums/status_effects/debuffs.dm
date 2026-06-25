@@ -1052,3 +1052,16 @@
 	scale = generator(GEN_VECTOR, list(0.3, 0.3), list(1, 1), NORMAL_RAND)
 	friction = -0.05
 	color = "#59ff4a"
+
+// ***************************************
+// *********** Lifedrain
+// ***************************************
+/datum/status_effect/incapacitating/lifedrain
+	id = "life_drain"
+	duration = 10 SECONDS
+	alert_type = /atom/movable/screen/alert/status_effect/lifedrain
+
+/atom/movable/screen/alert/status_effect/lifedrain
+	name = "Lifedrain"
+	desc = "Your life force transfers to xenos when they slash you!"
+	icon_state = "skullemoji"
