@@ -777,6 +777,47 @@
 	keybind_signal = COMSIG_XENOABILITY_BATONPASS
 	hotkey_keys = list("C")
 
+/datum/keybinding/xeno/abduct
+	name = "Abduct"
+	full_name = "Oppressor: Abduct"
+	description = "After a delay, grab marines from a 7 tiles away. Canceling early has consequences."
+	keybind_signal = COMSIG_XENOABILITY_ABDUCT
+	hotkey_keys = list("Q")
+
+/datum/keybinding/xeno/dislocate
+	name = "Dislocate"
+	full_name = "Oppressor: Dislocate"
+	description = "Punch a marine and knock them back by two tiles."
+	keybind_signal = COMSIG_XENOABILITY_DISLOCATE
+	hotkey_keys = list("F")
+
+/datum/keybinding/xeno/item_throw
+	name = "Item Throw"
+	full_name = "Oppressor: Item Throw"
+	description = "Pick up an item and throw it. Damage and range varies based on item's size."
+	keybind_signal = COMSIG_XENOABILITY_ITEM_THROW
+	hotkey_keys = list("Z")
+
+/datum/keybinding/xeno/tail_lash
+	name = "Tail Lash"
+	full_name = "Oppressor: Tail Lash"
+	description = "Knock back marines in a 2x3 radius where you're facing by two tiles."
+	keybind_signal = COMSIG_XENOABILITY_TAIL_LASH
+	hotkey_keys = list("C")
+
+/datum/keybinding/xeno/tail_lash_select
+	name = "Tail Lash (Select)"
+	full_name = "Oppressor: Select Tail Lash"
+	description = "Knock back marines in a 2x3 radius where you're facing by two tiles."
+	keybind_signal = COMSIG_XENOABILITY_TAIL_LASH_SELECT
+
+/datum/keybinding/xeno/advance_oppressor
+	name = "Advance (Oppressor)"
+	full_name = "Oppressor: Advance"
+	description = "Launch yourself with tremendous speed toward a location. Hitting a marine will cause them to be launched incredibly far."
+	keybind_signal = COMSIG_XENOABILITY_ADVANCE_OPPRESSOR
+	hotkey_keys = list("E")
+
 /datum/keybinding/xeno/screech
 	name = "screech"
 	full_name = "Queen: Screech"
