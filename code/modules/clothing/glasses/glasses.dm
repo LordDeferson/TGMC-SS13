@@ -175,7 +175,7 @@
 		return
 	var/obj/item/clothing/glasses/our_glasses
 
-	else if(istype(our_item, /obj/item/clothing/glasses/hud/health))
+	if(istype(our_item, /obj/item/clothing/glasses/hud/health))
 		if(prescription)
 			our_glasses = new /obj/item/clothing/glasses/hud/medgoggles/prescription
 		else
