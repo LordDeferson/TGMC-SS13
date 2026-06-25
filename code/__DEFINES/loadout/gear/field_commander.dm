@@ -75,7 +75,6 @@ GLOBAL_LIST_INIT(commander_gear_listed_products, list(
 	/obj/item/weapon/gun/pistol/smart_pistol = list(CAT_FCSUP, "TX13 Smartpistol", 10, "red"),
 	/obj/item/ammo_magazine/pistol/p14/smart_pistol = list(CAT_FCSUP, "TX13 smartpistol ammo", 1, "orange2"),
 	/obj/item/cell/lasgun/lasrifle/recharger = list(CAT_FCSUP, "Terra Experimental recharger battery", 5, "orange2"),
-	/obj/item/clothing/glasses/night/imager_goggles = list(CAT_FCSUP, "Optical Imager Goggles", 5, "yellow"),
 	/obj/item/clothing/mask/gas/swat = list(CAT_FCSUP, "SWAT protective mask", 5, "yellow"),
 	/obj/item/storage/belt/grenade/b17 = list(CAT_FCSUP, "High Capacity Grenade Belt", 5, "yellow"),
 	/obj/item/storage/backpack/lightpack = list(CAT_FCSUP, "Combat Backpack", 5, "yellow"),
