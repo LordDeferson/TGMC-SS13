@@ -115,7 +115,7 @@
 /obj/item/armor_module/armor/chest/marine/vsd_hardsuit
 	name = "\improper Crasher Super-Heavy MT/41 'Phobos' chestplate"
 	desc = "Designed for use with the CrashCore MT/P Exoskeleton. It provides a very good amount protection, with the cost of encumbrance when attached and is fairly easy to attach and remove from armor. Click on the armor frame to attach it. Meaning that only changing the chestplate makes significant armor difference. This armor appears to be marked as a 'Phobos' armor piece."
-	soft_armor = list(MELEE = 65, BULLET = 80, LASER = 80, ENERGY = 70, BOMB = 40, BIO = 55, FIRE = 60, ACID = 70)
+	soft_armor = list(MELEE = 60, BULLET = 75, LASER = 75, ENERGY = 65, BOMB = 35, BIO = 55, FIRE = 60, ACID = 65)
 	slowdown = SLOWDOWN_ARMOR_VERY_HEAVY
 	greyscale_config = /datum/greyscale_config/vsd_hardsuit
 	starting_attachments = list(/obj/item/armor_module/armor/secondary_color/chest/visor_color)
