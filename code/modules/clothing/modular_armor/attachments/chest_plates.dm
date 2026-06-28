@@ -94,21 +94,23 @@
 
 /obj/item/armor_module/armor/chest/marine/hardsuit/syndicate_markfive
 	name = "\improper FleckTex Mark V Breacher chestplates"
-	desc = "Designed for use with the FleckTex WY-01 Exoskeleton. It provides high protection and encumbrance when attached and is fairly easy to attach and remove from armor. Click on the armor frame to attach it. All arm plates have the same armor and slowdown, meaning that only changing the chestplate makes significant armor difference. This armor appears to be marked as a Mark V armor piece."
-	soft_armor = list(MELEE = 30, BULLET = 50, LASER = 50, ENERGY = 40, BOMB = 35, BIO = 35, FIRE = 35, ACID = 40)
-	slowdown = 0.5
+	desc = "Designed for use with the FleckTex WY-01 Exoskeleton. It offers slightly less high protection and slows you down less than armor when attached and is fairly easy to attach and remove from armor. Click on the armor frame to attach it. All arm plates have the same armor and slowdown, meaning that only changing the chestplate makes significant armor difference. This armor appears to be marked as a Mark V armor piece."
+	soft_armor = list(MELEE = 50, BULLET = 65, LASER = 65, ENERGY = 55, BOMB = 25, BIO = 45, FIRE = 50, ACID = 55)
+	slowdown = 0.65
 	greyscale_config = /datum/greyscale_config/hardsuit_variant/syndicate_markfive
 
 /obj/item/armor_module/armor/chest/marine/hardsuit/syndicate_markthree
 	name = "\improper FleckTex Mark III Marauder chestplates"
-	desc = "Designed for use with the FleckTex WY-01 Exoskeleton. It provides high protection and encumbrance when attached and is fairly easy to attach and remove from armor. Click on the armor frame to attach it. All arm plates have the same armor and slowdown, meaning that only changing the chestplate makes significant armor difference. This armor appears to be marked as a Mark III armor piece."
+	desc = "Designed for use with the FleckTex WY-01 Exoskeleton. It offers slightly less medium protection and slows you down less than armor when attached and is fairly easy to attach and remove from armor. Click on the armor frame to attach it. All arm plates have the same armor and slowdown, meaning that only changing the chestplate makes significant armor difference. This armor appears to be marked as a Mark III armor piece."
+	soft_armor = list(MELEE = 40, BULLET = 55, LASER = 55, ENERGY = 45, BOMB = 15, BIO = 40, FIRE = 45, ACID = 45)
+	slowdown = 0.4
 	greyscale_config = /datum/greyscale_config/hardsuit_variant/syndicate_markthree
 
 /obj/item/armor_module/armor/chest/marine/hardsuit/syndicate_markone
 	name = "\improper FleckTex Mark I Raider chestplates"
-	desc = "Designed for use with the FleckTex WY-01 Exoskeleton. It provides high protection and encumbrance when attached and is fairly easy to attach and remove from armor. Click on the armor frame to attach it. All arm plates have the same armor and slowdown, meaning that only changing the chestplate makes significant armor difference. This armor appears to be marked as a Mark I armor piece."
-	soft_armor = list(MELEE = 15, BULLET = 35, LASER = 35, ENERGY = 25, BOMB = 25, BIO = 25, FIRE = 25, ACID = 25)
-	slowdown = 0.1
+	desc = "Designed for use with the FleckTex WY-01 Exoskeleton. It offers slightly less light protection and slows you down less than armor when attached and is fairly easy to attach and remove from armor. Click on the armor frame to attach it. All arm plates have the same armor and slowdown, meaning that only changing the chestplate makes significant armor difference. This armor appears to be marked as a Mark I armor piece."
+	soft_armor = list(MELEE = 30, BULLET = 45, LASER = 45, ENERGY = 45, BOMB = 5, BIO = 35, FIRE = 40, ACID = 35)
+	slowdown = 0.15
 	greyscale_config = /datum/greyscale_config/hardsuit_variant
 
 //VSD Hardsuits
@@ -116,7 +118,7 @@
 	name = "\improper Crasher Super-Heavy MT/41 'Phobos' chestplate"
 	desc = "Designed for use with the CrashCore MT/P Exoskeleton. It provides a very good amount protection, with the cost of encumbrance when attached and is fairly easy to attach and remove from armor. Click on the armor frame to attach it. Meaning that only changing the chestplate makes significant armor difference. This armor appears to be marked as a 'Phobos' armor piece."
 	soft_armor = list(MELEE = 60, BULLET = 75, LASER = 75, ENERGY = 65, BOMB = 35, BIO = 55, FIRE = 60, ACID = 65)
-	slowdown = SLOWDOWN_ARMOR_VERY_HEAVY
+	slowdown = 0.85
 	greyscale_config = /datum/greyscale_config/vsd_hardsuit
 	starting_attachments = list(/obj/item/armor_module/armor/secondary_color/chest/visor_color)
 
