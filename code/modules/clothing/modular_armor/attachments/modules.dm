@@ -123,8 +123,8 @@
 	icon_state = "mod_armor"
 	worn_icon_state = "mod_armor_a"
 	attachment_layer = COLLAR_LAYER
-	soft_armor = list(MELEE = 10, BULLET = 15, LASER = 15, ENERGY = 15, BOMB = 15, BIO = 15, FIRE = 15, ACID = 5)
-	slowdown = 0.3
+	soft_armor = list(MELEE = 10, BULLET = 15, LASER = 15, ENERGY = 15, BOMB = 15, BIO = 0, FIRE = 10, ACID = 0)
+	slowdown = 0.15
 	slot = ATTACHMENT_SLOT_MODULE
 
 /obj/item/armor_module/module/tyr_extra_armor/mark1
@@ -132,8 +132,8 @@
 	desc = "Designed for mounting on modular armor. A decent amount of additional all-around armor plating designed to grant the user extra protection against any kind of threat. This older version has worse protection. Will greatly impact mobility."
 	icon_state = "mod_armor_lower"
 	worn_icon_state = "mod_armor_lower_a"
-	soft_armor = list(MELEE = 5, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, FIRE = 10, ACID = 0)
-	slowdown = 0.4
+	soft_armor = list(MELEE = 5, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, FIRE = 5, ACID = 0)
+	slowdown = 0.15
 
 /obj/item/armor_module/module/tyr_extra_armor/som
 	name = "\improper Lorica armor reinforcement system"
