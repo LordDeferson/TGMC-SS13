@@ -427,7 +427,7 @@ GLOBAL_LIST_INIT(known_implants, subtypesof(/obj/item/implant))
 				else
 					advice += temp_advice
 			var/datum/internal_organ/brain/brain = patient.get_organ_slot(ORGAN_SLOT_BRAIN)
-			if(brain.organ_status != ORGAN_HEALTHY && !chemicals_lists["Sulfasalazine"])
+			if(brain.organ_status != ORGAN_HEALTHY && brain.organ_status != ORGAN_BROKEN && !chemicals_lists["Sulfasalazine"])
 				temp_advice = list(list(
 					"advice" = "Administer a single dose of alkysine.",
 					"tooltip" = "Significant brain damage detected. Alkysine heals brain damage. If left untreated, patient may be unable to function well.",
@@ -439,8 +439,15 @@ GLOBAL_LIST_INIT(known_implants, subtypesof(/obj/item/implant))
 						advice += temp_advice
 				else
 					advice += temp_advice
+			if(brain.organ_status == ORGAN_BROKEN && !chemicals_lists["Sulfasalazine"])
+				advice += list(list(
+					"advice" = "Brain surgery required.",
+					"tooltip" = "Critical brain damage detected, surgical intervention advised.",
+					"icon" = "exclamation",
+					"color" = "red"
+					))
 			var/datum/internal_organ/eyes/eyes = patient.get_organ_slot(ORGAN_SLOT_EYES)
-			if(eyes.organ_status != ORGAN_HEALTHY && !chemicals_lists["Sulfasalazine"])
+			if(eyes.organ_status != ORGAN_HEALTHY && eyes.organ_status != ORGAN_BROKEN && !chemicals_lists["Sulfasalazine"])
 				temp_advice = list(list(
 					"advice" = "Administer a single dose of imidazoline.",
 					"tooltip" = "Eye damage detected. Imidazoline heals eye damage. If left untreated, patient may be unable to see properly.",
@@ -452,6 +459,13 @@ GLOBAL_LIST_INIT(known_implants, subtypesof(/obj/item/implant))
 						advice += temp_advice
 				else
 					advice += temp_advice
+			if(eyes.organ_status == ORGAN_BROKEN && !chemicals_lists["Sulfasalazine"])
+				advice += list(list(
+					"advice" = "Eye surgery required.",
+					"tooltip" = "Critical eye damage detected, surgical intervention advised.",
+					"icon" = "exclamation",
+					"color" = "red"
+					))
 			if(patient.get_brute_loss(organic_only = TRUE) > 30 && !chemicals_lists["Medical nanites"] && !chemicals_lists["Sulfasalazine"])
 				temp_advice = list(list(
 					"advice" = "Administer a single dose of bicaridine to reduce physical trauma.",
