@@ -527,6 +527,7 @@
 #include "code\datums\components\takes_reagent_appearance.dm"
 #include "code\datums\components\throw_parry.dm"
 #include "code\datums\components\udder.dm"
+#include "code\datums\components\valhalla_health_scan.dm"
 #include "code\datums\components\xeno_iff.dm"
 #include "code\datums\components\crafting\_recipes.dm"
 #include "code\datums\components\crafting\crafting.dm"

@@ -726,3 +726,9 @@
 
 	charge_datum.speed_down(1) //Lose one turf worth of speed.
 	return PRECRUSH_PLOWED
+
+/mob/living/carbon/xenomorph/ClickOn(atom/A, params)
+	if(health_scan && isliving(A) && health_analyzer)
+		health_analyzer.attack(A, src)
+		return
+	return ..()
