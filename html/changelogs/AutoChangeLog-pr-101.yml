@@ -1,0 +1,6 @@
+author: "homexp13"
+delete-after: True
+changes:
+  - rscadd: "Дистрокраш."
+  - rscdel: "Варфеир."
+  - server: "Что-то, в чем должны разбираться владельцы сервера."
